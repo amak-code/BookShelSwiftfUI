@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Book: Identifiable, Equatable {
+    
+    var id: String = UUID().uuidString
+    var title: String
+    var author: String
+    var coverArt: String
+    var releaseYear: String
+    var description: String
+}
