@@ -23,6 +23,7 @@ struct BookListView: View {
                         DetailView(book: .constant(book))
                     }
                 label: {
+              
                     HStack{
                         Image(book.coverArt)
                             .resizable()
@@ -55,15 +56,17 @@ struct BookListView: View {
                     
                 }
                     
+                
                 }//foreach
+                .onDelete { indexSet in
+                    bookViewModel.books.remove(atOffsets: indexSet)
                 
             }//list
-            
             .navigationTitle("Book Shelf")
             
         }//navigation
         
-        
+        }
     }
 }
 
@@ -86,3 +89,4 @@ struct ProgressBar: View {
         }
     }
 }
+
